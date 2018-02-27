@@ -1,0 +1,102 @@
+/* 
+    Author: Tashley Toocaram
+    Website: https://codenametashley.github.io
+    Company: CHB Technologies Ltd
+    Company Website: https://www.chb-technologies.mu/
+ */
+
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --start-gradient: #212E3B;
+    --end-gradient: #ADD8E6;
+    --left-menu: white;
+    --main-content: silver;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(var(--start-gradient), var(--end-gradient));
+}
+
+body header {
+    height: 10vh;
+    width: 100vw;
+}
+
+body footer {
+    height: 5vh;
+    line-height: 5vh;
+    width: 100vw;
+    background-color: var(--start-gradient);
+    color: var(--end-gradient);
+}
+
+body footer a {
+    color: var(--end-gradient);
+    text-decoration: none;
+}
+
+body footer a:hover {
+    color: var(--left-menu);
+}
+
+#main {
+    height: 85vh;
+    width: 100vw;
+}
+
+#main #slaves-menu {
+    height: 85vh;
+    width: 15vw;
+    background-color: var(--left-menu);
+    float: left;
+    clear: right;
+    opacity: 0.4;
+}
+
+#main #slaves-content {
+    height: 85vh;
+    width: 85vw;
+    background-color: var(--main-content);
+    float: left;
+    opacity: 0.2;
+
+    color: var(--start-gradient);
+}
+
+#search-bar {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#search-date {
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid var(--start-gradient);
+}
+
+#btn-search {
+    margin-top: 1vh;
+    width: 100%;
+    height: auto;
+
+    background-color: var(--start-gradient);
+    color: white;
+    font-size: large;
+}
+
+.slave-item {
+    border: 3px solid var(--start-gradient);
+    width: 75%;
+    height: auto;
+    margin-bottom: 1vh;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Slaves log crawler | Tashley</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <section id="main" align="center" ng-app="crawlerApp" ng-controller="appCtrl as vm">
+
+        <!-- <ul ng-repeat="slave in vm.slaves">
+            <li>{{slave.name}}</li>
+        </ul> -->
+        <!-- SIDE MENU -->
+        <div id="slaves-menu">
+            <div id="search-bar">
+                <input type="date" id="search-date" name="date" ng-model="vm.date">
+
+                <!-- <button id="btn-search" ng-click="vm.search()">Search</button> -->
+            </div>
+            <div align="center">
+                <div class="slave-item" ng-repeat="slave in vm.slaves" ng-click="vm.currentSlave = slave;">
+                        <h3>{{slave.name}}</h3>
+                </div>
+            </div>
+        </div>
+        <!-- END OF SIDE MENU -->
+
+        <!-- MAIN CONTENT -->
+        <div id="slaves-content">
+            <h3>{{vm.currentSlave.name}}</h3>
+        </div>
+        <!-- END OF MAIN CONTENT -->
+    </section>
+    <footer align="center">
+        <a href="https://codenametashley.github.io">
+            Slaves log crawler | Tashley &COPY; 2018
+        </a>
+    </footer>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.service.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
