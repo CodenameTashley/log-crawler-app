@@ -28,21 +28,73 @@
         <!-- SIDE MENU -->
         <div id="slaves-menu">
             <div id="search-bar">
-                <input type="date" id="search-date" name="date" ng-model="vm.date">
+                <input type="date" id="search-date" name="date" ng-model="vm.date" ng-change="vm.searchLogByDate()">
 
-                <!-- <button id="btn-search" ng-click="vm.search()">Search</button> -->
             </div>
             <div align="center">
-                <div class="slave-item" ng-repeat="slave in vm.slaves" ng-click="vm.currentSlave = slave;">
-                        <h3>{{slave.name}}</h3>
+                <div class="slave-item" ng-repeat="slave in vm.slaves" ng-click="vm.currentSlave = slave;vm.searchLogByDate();">
+                    <h2>{{slave.name}}</h2>
                 </div>
             </div>
+            <button id="btn-search" ng-click="vm.searchLogByDate();">Refresh</button>
         </div>
         <!-- END OF SIDE MENU -->
 
         <!-- MAIN CONTENT -->
-        <div id="slaves-content">
-            <h3>{{vm.currentSlave.name}}</h3>
+        <div id="slaves-content" align="center">
+
+            <fieldset id="slave-details" disabled="disabled">
+                <legend>Slave Details</legend>
+                <table>
+                    <tr>
+                        <td>
+                            <b>Name:</b> {{vm.currentSlave.name}}</td>
+                        <td>
+                            <b>Ip:</b> {{vm.currentSlave.ip}}</td>
+                        <td>
+                            <b>Log Url:</b>
+                            <a ng-href="vm.currentSlave.url">{{vm.currentSlave.url}}</a>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <div id="slave-logs" align="center">
+
+                <!-- <div ng-if="vm.log" id="slave-logs-items" align="center" ng-repeat="log in vm.log">
+                        
+                </div> -->
+                <table ng-if="vm.log" id="slave-logs-items" border="1">
+                    <tr>
+                        <th>Date &amp; Time</th>
+                        <th>Operation</th>
+                        <th>Source</th>
+                        <th>Destination</th>
+                        <th>Block ID</th>
+                        <th>Size (bytes)</th>
+                        <th>Offset</th>
+                        <th>CliID</th>
+                        <th>ServID</th>
+                        <th>Duration</th>
+                    </tr>
+                    <tr ng-repeat="log in vm.log">
+                        <td>{{log.dateAndTime}}</td>
+                        <td>{{log.op}}</td>
+                        <td>{{log.src}}</td>
+                        <td>{{log.dest}}</td>
+                        <td>{{log.blockID}}</td>
+                        <td>{{log.size}}</td>
+                        <td>{{log.offset}}</td>
+                        <td>{{log.cliID}}</td>
+                        <td>{{log.srvID}}</td>
+                        <td>{{log.duration}}</td>
+                    </tr>
+                </table>
+                <div ng-if="vm.errorMessage" id="slave-logs-error">
+                    {{vm.errorMessage}}
+                </div>
+            </div>
+
         </div>
         <!-- END OF MAIN CONTENT -->
     </section>

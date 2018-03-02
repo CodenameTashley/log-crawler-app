@@ -17,6 +17,8 @@
     --end-gradient: #ADD8E6;
     --left-menu: white;
     --main-content: silver;
+    --header-color: #181F29;
+    --dark-left-menu: #A4A4A4;
 }
 
 body {
@@ -28,6 +30,7 @@ body {
 body header {
     height: 10vh;
     width: 100vw;
+    background-color: var(--header-color)
 }
 
 body footer {
@@ -64,11 +67,15 @@ body footer a:hover {
 #main #slaves-content {
     height: 85vh;
     width: 85vw;
-    background-color: var(--main-content);
+   
     float: left;
-    opacity: 0.2;
+    
 
-    color: var(--start-gradient);
+    /* background: linear-gradient(var(--start-gradient), var(--end-gradient)); */
+}
+
+#main #slaves-content h2 {
+    color: white;
 }
 
 #search-bar {
@@ -86,7 +93,7 @@ body footer a:hover {
 
 #btn-search {
     margin-top: 1vh;
-    width: 100%;
+    width: 50%;
     height: auto;
 
     background-color: var(--start-gradient);
@@ -99,4 +106,70 @@ body footer a:hover {
     width: 75%;
     height: auto;
     margin-bottom: 1vh;
+
+}
+
+.slave-item:hover {
+    cursor: pointer;
+}
+
+#slave-details {
+    height: 10vh;
+    width: 80vw;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    border: 1px solid var(--main-content);
+    
+}
+
+#slave-details legend {
+    color: var(--main-content);
+}
+
+#slave-details table {
+    width: 100%;
+}
+
+#slave-details table tr td {
+    text-align: center;
+    color: var(--left-menu);
+}
+
+#slave-details table tr td a{
+    color: var(--left-menu);
+    text-decoration: none;
+}
+
+#slave-details table tr td a:hover{
+    color: var(--main-content);
+    text-decoration: underline;
+}
+
+#slave-logs {
+    height: 60vh;
+    width: 80vw;
+    background-color: var(--left-menu);
+    border: 1px solid var(--header-color);
+
+    text-align: justify;
+    overflow-y: auto;
+}
+
+#slave-logs-error {
+    color: red;
+    text-align: center;
+    font-size: xx-large
+}
+
+
+#slave-logs-items {
+    width: 100%;
+    
+    margin-bottom: 2vh;
+
+    border: 1px solid var(--header-color);
+}
+
+#slave-logs-items tr td {
+    text-align: center;
 }
